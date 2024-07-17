@@ -130,8 +130,8 @@ canvas.addEventListener("mouseup", addNewImageData);
 canvas.addEventListener("mouseout", stopDrawing);
 
 //For drag on mobi;e
-canvas.addEventListener("touchstart", prepareToDraw);
-canvas.addEventListener("touchmove", startDrawing);
+canvas.addEventListener("touchstart", prepareToTouchDraw);
+canvas.addEventListener("touchmove", startTouchDrawing);
 //Add event listeners to stop drawing when the user stops pressing on mouse or mouse is outside of canvas
 canvas.addEventListener("touchend", stopDrawing);
 //Add new image data for the undo array
@@ -159,6 +159,17 @@ function getMousePos(canvas, evt) {
     };
 }
 
+function getTouchPos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect(), // abs. size of element
+        scaleX = canvas.width / rect.width,    // relationship bitmap vs. element for x
+        scaleY = canvas.height / rect.height;  // relationship bitmap vs. element for y
+
+    return {
+        x: (evt.touches[0].clientX - rect.left) * scaleX,   // scale mouse coordinates after they have
+        y: (evt.touches[0].clientY - rect.top) * scaleY     // been adjusted to be relative to element
+    };
+}
+
 //Function to call when changing colors
 function changeColor() {
     pen_color = colorSetting.value;
@@ -178,6 +189,18 @@ function prepareToDraw(event) {
     ctx.moveTo(mousePos.x,
         mousePos.y
     );
+    //Prevent any default event actions from occuring
+    event.preventDefault();
+}
+
+function prepareToTouchDraw(event) {
+    isdrawing = true;
+    ctx.beginPath();
+    var mousePos = getTouchPos(canvas, event);
+    //Set the context to correct position 
+    ctx.moveTo(mousePos.x,
+        mousePos.y
+    );
 
     //Prevent any default event actions from occuring
     event.preventDefault();
@@ -187,6 +210,22 @@ function startDrawing(event) {
 
     if (isdrawing) {
         var mousePos = getMousePos(canvas, event);
+        ctx.lineTo(mousePos.x, mousePos.y);
+        ctx.strokeStyle = pen_color;
+        ctx.lineWidth = pen_width;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.stroke();
+    }
+
+    //Prevent any default event actions from occuring
+    event.preventDefault();
+}
+
+function startTouchDrawing(event) {
+
+    if (isdrawing) {
+        var mousePos = getTouchPos(canvas, event);
         ctx.lineTo(mousePos.x, mousePos.y);
         ctx.strokeStyle = pen_color;
         ctx.lineWidth = pen_width;

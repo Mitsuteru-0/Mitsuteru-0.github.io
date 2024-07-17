@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <header>
+    <h1>Digital Art and Illustration</h1>
+  </header>
+  <nav> <!--menu systtm-->
+    <button id="hamIcon">Menu</button>
+    <ul>
+      <li><button id="page1btn"><span>Equipment</span></button></li>
+      <li><button id="page2btn"><span>Digital Artists</span></button></li>
+      <li><button id="page3btn"><span>Workflow</span></button></li>
+    </ul>
+  </nav>
+
+  <div id="pagecontainer">
+    <!--Page 1 EQUIPMENT-->
+    <div class="page" id="page1">
+      <section class="box--center">
+        <!--Parallax image-->
+        <div class="parallax image-library container--centered">
+          <div class="box--center">
+            <h1 id="title">EQUIPMENT</h1>
+          </div>
+        </div>
+        <!--Intro-->
+        <div class="shadow background--black hidden">
+          <hr>
+          <!--Block reveal intro-->
+          <h2><span>INTRODUCTION</span></h2>
+          <p>
+            This page is about some of the <span> EQUIPMENT </span> that is required for digital art.
+          </p>
+          <hr>
+        </div>
+      </section>
+
+      <section class="box--center">
+        <div class="grid-container">
+          <!--Black box for start of section about drawing-->
+          <div class="grid-item shadow background--black container--centered hidden">
+            <div>
+              <h2>
+                <span>GETTING STARTED</span>
+              </h2>
+              <p>This section details the general baseline requirements to get started with digital art
+              </p>
+            </div>
+          </div>
+          <!--Grid item that contains info about illustrators and links to their relevant pages-->
+          <div class="grid-item shadow container--centered">
+            <div>
+              <h2><span>BRANDS</span></h2>
+              <p>Here are some reputable brands for digital art hardware and software:</p>
+              <ul>
+                <li><a class="button"
+                    href="https://x.com/yoneyamai?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&mx=2"
+                    target="_blank"><span>Wacom</span></a></li>
+                <li><a class="button" href="https://x.com/sotonami?lang=en" target="_blank"><span>Huion</span></a>
+                </li>
+                <li><a class="button" href="https://x.com/matchach?lang=en" target="_blank"><span>Clip Studio
+                      Paint</span></a></li>
+                <li><a class="button"
+                    href="https://x.com/ramdayo1122?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                    target="_blank"><span>MediBang</span></a></li>
+
+              </ul>
+            </div>
+          </div>
+          <!--Grid item that contains info about my setup-->
+          <div class="grid-item shadow container--centered">
+            <div class="box--center">
+              <h2><span>HARDWARE AND COST</span></h2>
+              <hr>
+              <p>Here are some of the things I use to draw</p>
+              <table>
+                <tr>
+                  <th>Item</th>
+                  <th>Cost</th>
+                  <th>Performance</th>
+                  <th>Usage</th>
+                </tr>
+                <tr>
+                  <td>Huion Kamvas 16 Pro</td>
+                  <td>$688</td>
+                  <td>Best Decision I ever made</td>
+                  <td>I use it to draw</td>
+                </tr>
+                <tr>
+                  <td>My Computer</td>
+                  <td>$1000+</td>
+                  <td>One of the fans stopped working</td>
+                  <td>I use it to store my drawing software</td>
+                </tr>
+                <tr>
+                  <td>Ipad</td>
+                  <td>less than $1000</td>
+                  <td>Decent</td>
+                  <td>Secondary School forced me to buy it, I use it to draw when I dont have access to my kamvas</td>
+                </tr>
+              </table>
+            </div>
+            <hr>
+          </div>
+
+          <!--Grid item that contains info about what i like to draw-->
+          <div class="grid-item shadow">
+            <div class="container">
+              <div class="shadow box--start background--black">
+                <h2><span> SOFTWARE </span></h2>
+              </div>
+              <!--Middle Area-->
+              <div class="container box--middle">
+                <div class="box--max shadow">
+                  <h2><span>Clip Studio Paint</span></h2>
+                  <hr>
+                  <p>I like <span>Anime and Manga</span>.
+                  </p>
+                </div>
+
+                <div class="box--max shadow">
+                  <h2><span>Medibang Paint</span></h2>
+                  <hr>
+                  <p>Anything I find <span>Elegant</span> I find myself wanting to draw
+                  </p>
+                </div>
+              </div>
+
+              <div class="shadow box--end">
+                <h2><span>Other alternatives</span></h2>
+                <hr>
+                <p> This website is a database that stores various titles I look through it to find references
+                </p>
+                <a class="button" href="https://myanimelist.net/" target="_blank"><span> WEBSITE </span></a>
+              </div>
+            </div>
+          </div>
+
+          <!--Grid item about drawing software-->
+          <div class="grid-item shadow background--black container--centered">
+            <div>
+              <h2>
+                <span>other uses</span>
+              </h2>
+              <p>Some software, like Photoshop, have other uses such as photo editing and manipulation
+              </p>
+            </div>
+          </div>
+          <!--End of grid-->
+        </div>
+      </section>
+
+      <!--Recommender-->
+      <section>
+        <div class="box--center background--black">
+          <h2>Recommendations</h2>
+        </div>
+
+
+        <div class="box--center background--black">
+          <h2>Budget</h2>
+          <p>Input your budget for Recommendations<p>
+          <hr>
+          <form action="#" onsubmit="return false" class="vertical">
+            <label for="lowest-price">Lowest price: </label><input type="number" id="lowest-price" value="0"></input>
+            <label for="highest-price">Highest price: </label><input type="number" id="highest-price" value="0"></input>
+            <label for="item-type">item type:</label>
+            <select id="item-type">
+              <option value="tablet">Tablet</option>
+              <option value="software">Software</option>
+              <option value="accessory">Accessory</option>
+            </select>
+
+          </form>
+        </div>
+        <!--List of recommended products-->
+        <div class="container" id="product-list">
+        </div>
+      </section>
+
+
+    </div>
+
+    <!--Page 2 DIGITAL ARTISTS-->
+    <div class="page" id="page2">
+      <section class="box--center">
+        <!--Parallax image-->
+        <div class="parallax image-illume container--centered">
+          <div class="box--center">
+            <h1 id="title">ARTISTS</h1>
+          </div>
+        </div>
+        <!--Intro-->
+        <div class="shadow background--black">
+          <hr>
+          <h2><span>INTRODUCTION</span></h2>
+          <p>This page is about notable<span>Digital Artists</span> I personally follow,
+            It contains a brief summary of their styles and profiles.
+          </p>
+          <hr>
+        </div>
+      </section>
+
+      <section class="box--center">
+        <div>
+          <hr>
+          <h2><span>Schools</span></h2>
+          <p>The are Some of the educational institutions I have studied at</p>
+          <hr>
+        </div>
+        <!--Primary School Info-->
+        <div class="container">
+          <!--Image and website-->
+          <div class="shadow box--small box--center">
+            <h2>
+              <span>
+                Ngee Ann Primary School
+              </span>
+            </h2>
+            <img src="images/NgeeAnn_Primary_Logo.jpg" alt="Ngee Ann Primary Logo">
+            <a class="button" href="https://www.ngeeannpri.moe.edu.sg/" target="_blank"><span>Website</span></a>
+            <a class="button" href="tel:64418677" target="_blank"><span>Contact</span></a>
+          </div>
+          <!--Details-->
+          <div class="shadow box--large  background--black">
+            <h2>PRIMARY SCHOOL</h2>
+            <hr>
+            <p>I studied in Ngee Ann Primary from 2013-2018. My time in primary school was mostly carefree
+              I was a bad student up until <span>PSLE</span>, horrendous actually
+              My math and chinese were especially bad. It wasn't until
+              Primary 6 when I started taking things Seriously. Somehow
+              Miraculously I was able to get my act together and Managed
+              to just barely scrape by into the Express stream</p>
+          </div>
+        </div>
+        <!--Secondary School Info-->
+        <div class="container">
+          <!--Image and website-->
+          <div class="box box--small shadow">
+            <h2>
+              <span>
+                Bedok South Secondary School
+              </span>
+            </h2>
+            <img src="images/bedok_south_secondary_school_logo.jpg" alt="BDS Logo">
+            <a class="button" href="https://www.bedoksouthsec.moe.edu.sg/" target="_blank"><span>Website</span></a>
+            <a class="button" href="tel:64414479" target="_blank"><span>Contact</span></a>
+          </div>
+          <!--Details-->
+          <div class="box-shadow box--large background--black">
+            <h2>SECONDARY SCHOOL</h2>
+            <hr>
+            <p>I studied in Bedok South Secondary from 2019-2022. I became quite unsociable during Secondary School,
+              and actually quite unlikeable I didn't talk to anybody
+              I didn't like, and my grades were quite bad throughout
+              Secondary 1, It got better in the later years though.
+              It was alright overall though.
+            </p>
+          </div>
+        </div>
+        <!--Polytechnic Info-->
+        <div class="container">
+          <!--Image and website-->
+          <div class="box box--small shadow">
+            <h2>
+              <span>
+                Nanyang Polytechnic
+              </span>
+            </h2>
+            <img src="images/nanyang_polytechnic_logo.jpg" alt="NYP Logo">
+            <a class="button" href="https://www.nyp.edu.sg/student" target="_blank"><span>Website</span></a>
+            <a class="button" href="https://www.nyp.edu.sg/contact-us/general-enquiries"
+              target="_blank"><span>Contact</span></a>
+          </div>
+          <!--Details-->
+          <div class="box-shadow box--large background--black">
+            <h2>TERTIARY EDUCATION</h2>
+            <hr>
+            <p>Currently Studying at Nanyang Polytechnic's <span>Game Development and Technology</span> course,
+              when I first joined without any prior coding experience I felt like giving up at
+              in the first few weeks, and sometimes I still do. I hope I can survive until the end graduate
+              without any issues.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Section about Extracurriculars-->
+      <section class="box--center">
+        <div>
+          <hr>
+          <h2><span>EXTRA-CURRICULARS</span></h2>
+          <p>This is section is dedicated towards my extracurricular activties that I have been in during my tenure as a
+            student</p>
+          <hr>
+        </div>
+
+        <!--Container containing extracurricular info-->
+        <div class="container">
+          <div class="box shadow">
+            <div class="card-container">
+              <div class="card">
+                <div class="card-face card-face--front">
+                  <img src="https://pbs.twimg.com/profile_images/1155680462464942081/JBCvjutU_400x400.jpg"
+                    alt="yoneyama">
+                </div>
+                <div class="card-face card-face--back">
+                  <p>I was INFOCOMM in Primary School</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box shadow">
+            <div class="card-container">
+              <div class="card">
+                <div class="card-face card-face--front">
+                  <h2><span>INFOCOMM</span></h2>
+                </div>
+                <div class="card-face card-face--back">
+                  <h2><span>INFOCOMM</span></h2>
+                  <hr>
+                  <p>I was INFOCOMM in Primary School</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box shadow">
+            <div class="card-container">
+              <div class="card">
+                <div class="card-face card-face--front">
+                  <h2><span>INFOCOMM</span></h2>
+                </div>
+                <div class="card-face card-face--back">
+                  <h2><span>INFOCOMM</span></h2>
+                  <hr>
+                  <p>I was INFOCOMM in Primary School</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    </div>
+
+    <!--Page 3 WORKFLOW-->
+    <div class="page" id="page3">
+      <section class="box--center">
+        <!--Parallax image-->
+        <div class="parallax image-dawn container--centered">
+          <div class="box--center">
+            <h1 id="title">WORKFLOW</h1>
+          </div>
+        </div>
+        <!--Intro-->
+        <div class="shadow background--black ">
+          <hr>
+          <h2><span>INTRODUCTION</span></h2>
+          <p>Here is a section detailing some of my interests</p>
+          <hr>
+        </div>
+      </section>
+
+      <!--Entertainment Section-->
+      <section class="box--center">
+        <div class="container">
+          <div class="shadow box--start background--black">
+            <h2><span> Entertainment </span></h2>
+          </div>
+          <!--Middle Area-->
+          <div class="container box--middle">
+            <div class="box--max shadow">
+              <h2><span>ANIME AND MANGA</span></h2>
+              <hr>
+              <p>I like <span>Anime and Manga</span>.
+              </p>
+            </div>
+
+            <div class="box--max shadow">
+              <h2><span>MY FAVOURITES</span></h2>
+              <hr>
+              <p>I personally enjoyed<span> the manga </span>(NOT THE ANIME)
+                <span>of Tokyo Ghoul</span>. My favourite anime would either be <span>Death Parade</span>
+                or <span>the Monogatari Series</span> (Good series but a little too much fanservice).
+              </p>
+            </div>
+          </div>
+
+          <div class="shadow box--end">
+            <h2><span>MY ANIME LIST</span></h2>
+            <hr>
+            <p> This website is a database that stores various titles
+            </p>
+            <a class="button" href="https://myanimelist.net/" target="_blank"><span> WEBSITE </span></a>
+          </div>
+        </div>
+      </section>
+
+      <!--Games Section-->
+      <section class="box--center">
+        <!--Container that wraps around the boxes inside to make a horizontal layout when on desktop-->
+        <div class="container">
+          <div class="box shadow background--black">
+            <h2><span> GAMES </span></h2>
+          </div>
+          <div class="box shadow ">
+            <h2><span>Turn-Based Games</span></h2>
+            <hr>
+            <p>I like <span> the Turn-Based </span> Genre the most, especially RPGs.
+            </p>
+          </div>
+
+          <div class="box shadow ">
+            <h2><span>MY FAVOURITES</span></h2>
+            <hr>
+            <p>Too many to count but if I were to list some they would be </p>
+            <ol>
+              <li><a href="" class="button"><span>Persona Series</span></a></li>
+              <li><a href="" class="button"><span>The Cruel king and The Great Hero</span></a></li>
+              <li><a href="" class="button"><span>Library of Ruina</span></a></li>
+            </ol>
+          </div>
+
+          <div class="box shadow ">
+            <h2><span>STEAM</span></h2>
+            <hr>
+            <p> Here is my Steam Page
+            </p>
+            <a class="button"><span> STEAM </span></a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="box--center shadow background--black">
+          <h2><span>Try sketching!</span></h2>
+        </div>
+        <!--Drawing Canvas-->
+        <canvas id="canvas" class="shadow">
+
+        </canvas>
+        <!--Settings-->
+        <div>
+          <div class="box">
+            <form action="#" onsubmit="return false">
+              <label for="penColor">Color: </label><input type="color" id="penColor"></input>
+              <label for="penWidth">Pen Size: </label><input type="range" id="penWidth" min="0.1" max="10" value="0.1"></input>
+              <button id="undo"> Undo</button>
+              <button id="clear"> Clear</button>
+              <button id="download-canvas"> Download Image</button>
+            </form>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+
+  <!--Footer-->
+  <footer>
+    <!--Contact-->
+    <div class="box--footer">
+      <h2>Contact Me</h2>
+      <hr>
+      <ul>
+        <li>
+          <a class="footer-link" href="https://www.reddit.com/" target="_blank">
+            <span>
+              Reddit
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="footer-link" href="https://discord.com/" target="_blank">
+            <span>
+              Discord
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="footer-link" href="https://steamcommunity.com/profiles/76561199441738872/" target="_blank">
+            <span>
+              Steam
+            </span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!--Navigation-->
+    <div class="box--footer">
+      <h2> Navigation</h2>
+      <hr>
+      <ul>
+        <li>
+          <a class="footer-link" href="index.html">
+            <span>
+              <i class="ri-home-fill"></i> Home
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="footer-link" href="#title">
+            <span>
+              Back To Top
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--Link to the JS script-->
+    <script src="js/script.js"></script>
+  </footer>
+
+
+</body>
+
+</html>

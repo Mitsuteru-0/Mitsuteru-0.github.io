@@ -186,7 +186,6 @@ function prepareToDraw(event) {
 function startDrawing(event) {
 
     if (isdrawing) {
-        console.log("draw");
         var mousePos = getMousePos(canvas, event);
         ctx.lineTo(mousePos.x, mousePos.y);
         ctx.strokeStyle = pen_color;

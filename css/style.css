@@ -68,11 +68,6 @@ select {
   max-width: 5em;
 }
 
-form.vertical {
-  display: inline-flex;
-  align-items: center;
-  padding: 2em;
-}
 
 
 /*for responsive Table*/
@@ -153,7 +148,7 @@ header {
 
 .image-illume {
   /* The image used */
-  background-image: url('../images/illumeByYoneyamaMai.jpeg');
+  background-image: url('../images/illumeByYoneyamaMai.jpg');
 }
 
 .image-dawn {

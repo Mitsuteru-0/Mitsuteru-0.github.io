@@ -118,6 +118,7 @@ var undo_array = [];
 //Variable to keep track of the undo index
 var undo_index = -1;
 
+//For mouse
 canvas.addEventListener("mousedown", prepareToDraw);
 canvas.addEventListener("mousemove", startDrawing);
 //Add event listeners to stop drawing when the user stops pressing on mouse or mouse is outside of canvas
@@ -127,6 +128,16 @@ canvas.addEventListener("mouseup", addNewImageData);
 
 //Stop drawing when outside canvas
 canvas.addEventListener("mouseout", stopDrawing);
+
+//For drag on mobi;e
+canvas.addEventListener("touchstart", prepareToDraw);
+canvas.addEventListener("touchmove", startDrawing);
+//Add event listeners to stop drawing when the user stops pressing on mouse or mouse is outside of canvas
+canvas.addEventListener("touchend", stopDrawing);
+//Add new image data for the undo array
+canvas.addEventListener("touchend", addNewImageData);
+
+
 
 //Change pen color
 colorSetting.addEventListener("change", changeColor);

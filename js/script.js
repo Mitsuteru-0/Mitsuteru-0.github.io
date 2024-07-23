@@ -4,9 +4,10 @@
 const page1btn = document.querySelector("#page1btn");
 const page2btn = document.querySelector("#page2btn");
 const page3btn = document.querySelector("#page3btn");
+var pageTurnSound = document.querySelector("#pageTurnSound");
 var allpages = document.querySelectorAll(".page");
 //select all subtopic pages
-console.log(allpages);
+//console.log(allpages);
 //Hide all pages once
 hideall();
 show(1);
@@ -29,17 +30,31 @@ function show(pgno) { //function to show selected page no
 eventhandler functions to call show function*/
 page1btn.addEventListener("click", function () {
     show(1);
+    pageTurnSound.play();
 });
 page2btn.addEventListener("click", function () {
     show(2);
+    pageTurnSound.play();
 });
 page3btn.addEventListener("click", function () {
     show(3);
+    pageTurnSound.play();
 });
-
 
 const hamBtn = document.querySelector("#hamIcon");
 hamBtn.addEventListener("click", toggleMenus);
+
+/*Used to toggle the menu*/
+const menuItemsList = document.querySelector("nav ul");
+function toggleMenus() { /*open and close menu*/
+    // if (menuItemsList.style.display == "flex")
+    //     menuItemsList.style.display = "none";
+    // else menuItemsList.style.display = "flex";
+
+    //Toggle the classlist between active and inactive
+    menuItemsList.classList.toggle("active");
+}
+
 
 /*Card flipping*/
 // Select all elements with the class 'card-container'
@@ -52,34 +67,24 @@ for (let onecard of allcards) {
     });
 }
 
-/*Used to toggle the menu*/
-const menuItemsList = document.querySelector("nav ul");
-function toggleMenus() { /*open and close menu*/
-    if (menuItemsList.style.display == "flex")
-        menuItemsList.style.display = "none";
-    else menuItemsList.style.display = "flex";
-}
-
-
 /*Scroll Animations */
 const blockReveals = document.querySelectorAll('.hidden');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        //Reveal the things that are hidden
-        if (entry.isIntersecting) {
-            entry.target.classList.add('reveal');
-        }
-        //Hide the things that are supposed to be hidden when not in view
-        else {
-            entry.target.classList.remove('reveal');
-        }
+const observer = new IntersectionObserver(function(entries) {
+	entries.forEach(function(entry) {
+		//Reveal the things that are hidden
+		if (entry.isIntersecting) {
+			entry.target.classList.add('reveal');
+		}
+		//Hide the things that are supposed to be hidden when not in view
+		else {
+			entry.target.classList.remove('reveal');
+		}
 
-    });
-},
-    {
-        threshold: 0.5
-    });
+	});
+}, {
+	threshold: [0.5, 0]
+});
 //
 for (let i = 0; i < blockReveals.length; i++) {
     const element = blockReveals[i];
@@ -91,15 +96,19 @@ for (let i = 0; i < blockReveals.length; i++) {
 //Canvas drawing
 //Get the canvas, color selector elements
 var canvas = document.querySelector("#canvas");
+//Drawing sfx
+var drawingSound = document.getElementById('drawingSound');
+//pen settings
 var colorSetting = document.querySelector("#penColor");
 var penWidthSetting = document.querySelector("#penWidth");
 var clearCanvasBtn = document.querySelector("#clear");
 var undoCanvasBtn = document.querySelector("#undo");
 var downloadBtn = document.querySelector('#download-canvas');
 
-var heightRatio = 0.45;
-canvas.height = canvas.width * heightRatio;
-
+//var heightRatio = 0.45;
+//canvas.height = canvas.width * heightRatio;
+canvas.height = 450;
+canvas.width = 1000;
 
 //Get the rendering context of the canvas
 var ctx = canvas.getContext("2d", { willReadFrequently: true });
@@ -136,7 +145,8 @@ canvas.addEventListener("touchmove", startTouchDrawing);
 canvas.addEventListener("touchend", stopDrawing);
 //Add new image data for the undo array
 canvas.addEventListener("touchend", addNewImageData);
-
+canvas.addEventListener("touchcancel", stopDrawing);
+canvas.addEventListener("touchcancel", addNewImageData);
 
 
 //Change pen color
@@ -183,6 +193,9 @@ function changeWidth() {
 //Function that is called when the mouse is down and user wants to draw
 function prepareToDraw(event) {
     isdrawing = true;
+    //Start drawing sfx
+    drawingSound.play();
+    drawingSound.loop = true;
     ctx.beginPath();
     var mousePos = getMousePos(canvas, event);
     //Set the context to correct position 
@@ -192,9 +205,12 @@ function prepareToDraw(event) {
     //Prevent any default event actions from occuring
     event.preventDefault();
 }
-
+//touch ver
 function prepareToTouchDraw(event) {
     isdrawing = true;
+    //Start drawing sfx
+    drawingSound.play();
+    drawingSound.loop = true;
     ctx.beginPath();
     var mousePos = getTouchPos(canvas, event);
     //Set the context to correct position 
@@ -206,6 +222,7 @@ function prepareToTouchDraw(event) {
     event.preventDefault();
 }
 
+//Function to draw graphics on screen
 function startDrawing(event) {
 
     if (isdrawing) {
@@ -221,7 +238,7 @@ function startDrawing(event) {
     //Prevent any default event actions from occuring
     event.preventDefault();
 }
-
+//Touch ver
 function startTouchDrawing(event) {
 
     if (isdrawing) {
@@ -244,6 +261,8 @@ function stopDrawing(event) {
         //Close the path and set is drawing to false to stop drawing
         ctx.closePath();
         isdrawing = false;
+        drawingSound.pause();
+        drawingSound.currentTime = 0;
     }
     //Prevent any default event actions from occuring
     event.preventDefault();
@@ -299,11 +318,12 @@ function downloadImage() {
 
 /*Product Recommender */
 class Product {
-    constructor(image, name, price, desc) {
+    constructor(image, name, price, type, desc) {
         this.image = image;
         this.name = name;
         this.price = price;
         this.desc = desc;
+        this.type = type;
     }
 }
 
@@ -324,16 +344,22 @@ itemtype.addEventListener("change", scrollToRec);
 
 var products = [];
 //Push in clip studio
-products.push(new Product("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvilwOL46UwdMzqVvcxugWhFmNvMF9Du0wnA&s",
-    "Clip Studio", 140, "A premium drawing software"));
-products.push(new Product("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvilwOL46UwdMzqVvcxugWhFmNvMF9Du0wnA&s",
-    "Clip Studio", 140, "A premium drawing software"));
-products.push(new Product("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvilwOL46UwdMzqVvcxugWhFmNvMF9Du0wnA&s",
-    "Clip Studio", 140, "A premium drawing software"));
-products.push(new Product("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvilwOL46UwdMzqVvcxugWhFmNvMF9Du0wnA&s",
-    "Clip Studio", 140, "A premium drawing software"));
-products.push(new Product("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvilwOL46UwdMzqVvcxugWhFmNvMF9Du0wnA&s",
-    "Clip Studio", 140, "A premium drawing software"));
+products.push(new Product("images/ClipStudioPaint.jpg",
+    "Clip Studio", 140, "software", "A premium drawing software"));
+products.push(new Product("images/Medibang.png",
+    "Medibang", 0, "software", "A free drawing software"));
+products.push(new Product("images/Krita.png",
+    "Krita", 0, "software", "A free drawing software"));
+products.push(new Product("images/HuionKamvas16Pro.jpg",
+    "Huion Kamvas 16 Pro", 899, "tablet", "A premium value tablet"));
+products.push(new Product("images/WacomIntuos.jpg",
+    "Intuos Pro", 550, "tablet", "High Quality No-Screen tablet made by Wacom"));
+products.push(new Product("images/IntuosS.jpg",
+        "Intuos Small", 100, "tablet", "No-Screen tablet made by Wacom"));
+products.push(new Product("images/PaperLike.jpg",
+    "PaperLike", 50, "accessory", "Matte Screen Protector"));
+products.push(new Product("images/DrawingGlove.jpg",
+    "Drawing Glove", 20, "accessory", "A glove to prevent smudges on an LCD tablet"));
 evaluateRecommendations();
 
 function createNewRecommendation(product) {
@@ -382,6 +408,9 @@ function evaluateRecommendations() {
     clearRecommendations();
     for (let product of products) {
         let tempProduct = product;
+        //Check if the product is of the same specified type else continue
+        if (tempProduct.type != itemtype.value)
+            continue;
         //If the product is less than the highest price
         if (tempProduct.price <= highestPrice.value && tempProduct.price >= lowestPrice.value) {
             createNewRecommendation(tempProduct);

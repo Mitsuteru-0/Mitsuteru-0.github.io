@@ -10,11 +10,12 @@
 </head>
 
 <body>
-  <header>
+  <header id="top">
     <h1>Digital Art and Illustration</h1>
   </header>
   <nav> <!--menu systtm-->
     <button id="hamIcon">Menu</button>
+    <audio id="pageTurnSound" src="audio/pageturn.mp3"></audio>
     <ul>
       <li><button id="page1btn"><span>Equipment</span></button></li>
       <li><button id="page2btn"><span>Digital Artists</span></button></li>
@@ -29,7 +30,7 @@
         <!--Parallax image-->
         <div class="parallax image-library container--centered">
           <div class="box--center">
-            <h1 id="title">EQUIPMENT</h1>
+            <h1 class="title">EQUIPMENT</h1>
           </div>
         </div>
         <!--Intro-->
@@ -46,7 +47,7 @@
 
       <section class="box--center">
         <div class="grid-container">
-          <!--Black box for start of section about drawing-->
+          <!--Black box for start of section about getting started with digital art-->
           <div class="grid-item shadow background--black container--centered hidden">
             <div>
               <h2>
@@ -56,97 +57,98 @@
               </p>
             </div>
           </div>
-          <!--Grid item that contains info about illustrators and links to their relevant pages-->
-          <div class="grid-item shadow container--centered">
+          <!--Grid item that contains info about reputable brands and links to their respective pages-->
+          <div class="grid-item shadow container--centered hidden">
             <div>
               <h2><span>BRANDS</span></h2>
               <p>Here are some reputable brands for digital art hardware and software:</p>
               <ul>
+                <li><a class="button" href="https://www.wacom.com/en-us" target="_blank"><span>Wacom</span></a></li>
                 <li><a class="button"
-                    href="https://x.com/yoneyamai?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&mx=2"
-                    target="_blank"><span>Wacom</span></a></li>
-                <li><a class="button" href="https://x.com/sotonami?lang=en" target="_blank"><span>Huion</span></a>
+                    href="https://store.huion.com/global/?gad_source=1&gclid=CjwKCAjwhvi0BhA4EiwAX25uj_c2sZjVNsEC9c7AfSzHbBQLml9RjChThUBQZOuhcpCHTualtzFH2xoCeRwQAvD_BwE"
+                    target="_blank"><span>Huion</span></a>
                 </li>
-                <li><a class="button" href="https://x.com/matchach?lang=en" target="_blank"><span>Clip Studio
+                <li><a class="button" href="https://www.clipstudio.net/en/" target="_blank"><span>Clip Studio
                       Paint</span></a></li>
-                <li><a class="button"
-                    href="https://x.com/ramdayo1122?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-                    target="_blank"><span>MediBang</span></a></li>
+                <li><a class="button" href="https://medibangpaint.com/en/" target="_blank"><span>MediBang</span></a>
+                </li>
 
               </ul>
             </div>
           </div>
-          <!--Grid item that contains info about my setup-->
-          <div class="grid-item shadow container--centered">
+          <!--Grid item that contains info about cost and hardware-->
+          <div class="grid-item shadow container--centered hidden">
             <div class="box--center">
+              <div class="container--centered background--black">
               <h2><span>HARDWARE AND COST</span></h2>
-              <hr>
-              <p>Here are some of the things I use to draw</p>
+
+              </div>
+              <p>You will need an input device like a drawing tablet in order to draw effectively</p>
               <table>
                 <tr>
                   <th>Item</th>
                   <th>Cost</th>
-                  <th>Performance</th>
                   <th>Usage</th>
                 </tr>
                 <tr>
-                  <td>Huion Kamvas 16 Pro</td>
-                  <td>$688</td>
-                  <td>Best Decision I ever made</td>
-                  <td>I use it to draw</td>
+                  <td>LCD tablet</td>
+                  <td>$300~$7000+</td>
+                  <td>Input device that registers pen sensitivity and has a screen that can be drawn on</td>
                 </tr>
                 <tr>
-                  <td>My Computer</td>
-                  <td>$1000+</td>
-                  <td>One of the fans stopped working</td>
-                  <td>I use it to store my drawing software</td>
+                  <td>No-Screen Tablet</td>
+                  <td>$20~$200</td>
+                  <td>Input device that registers pen sensitivity, however it requires an external monitor</td>
                 </tr>
                 <tr>
-                  <td>Ipad</td>
-                  <td>less than $1000</td>
-                  <td>Decent</td>
-                  <td>Secondary School forced me to buy it, I use it to draw when I dont have access to my kamvas</td>
+                  <td>IPad/Android Tablet</td>
+                  <td>~$1000</td>
+                  <td>Portable devices that can also run IOS/Android however software support and access is limited,
+                    Multi-purpose device that can also bes used for drawing input</td>
                 </tr>
               </table>
             </div>
             <hr>
           </div>
 
-          <!--Grid item that contains info about what i like to draw-->
+          <!--Grid item about drawing software-->
           <div class="grid-item shadow">
             <div class="container">
-              <div class="shadow box--start background--black">
+              <div class="shadow box--small background--black">
                 <h2><span> SOFTWARE </span></h2>
+                <p>You will need a drawing software that can recieve the input from the tablet and render graphics with its tools</p>
               </div>
               <!--Middle Area-->
-              <div class="container box--middle">
-                <div class="box--max shadow">
+              <div class="container box--medium">
+                <div class="box--max shadow hidden">
                   <h2><span>Clip Studio Paint</span></h2>
                   <hr>
-                  <p>I like <span>Anime and Manga</span>.
+                  <p>This is a <span>Premium</span> drawing software, it has different versions which differ in price,
+                    EX and Pro.
                   </p>
                 </div>
 
-                <div class="box--max shadow">
+                <div class="box--max shadow hidden">
                   <h2><span>Medibang Paint</span></h2>
                   <hr>
-                  <p>Anything I find <span>Elegant</span> I find myself wanting to draw
+                  <p>This is a go to <span>Free</span> alternative to Clip Studio
                   </p>
                 </div>
               </div>
 
-              <div class="shadow box--end">
+              <div class="shadow hidden">
                 <h2><span>Other alternatives</span></h2>
                 <hr>
-                <p> This website is a database that stores various titles I look through it to find references
+                <p> This link will bring you to other software alternatives, like KRITA, Paint Tool SAI or Photoshop.
                 </p>
-                <a class="button" href="https://myanimelist.net/" target="_blank"><span> WEBSITE </span></a>
+                <a class="button" href="https://www.clipstudio.net/how-to-draw/archives/155465" target="_blank"><span>
+                    WEBSITE </span></a>
               </div>
             </div>
           </div>
 
-          <!--Grid item about drawing software-->
-          <div class="grid-item shadow background--black container--centered">
+          <!--Other uses-->
+          <div class="grid-item shadow background--black container--centered hidden">
             <div>
               <h2>
                 <span>other uses</span>
@@ -161,18 +163,20 @@
 
       <!--Recommender-->
       <section>
-        <div class="box--center background--black">
+        <div class="box--center background--black hidden">
           <h2>Recommendations</h2>
+          <p>Product Recommendations Tool</p>
         </div>
 
 
         <div class="box--center background--black">
           <h2>Budget</h2>
-          <p>Input your budget for Recommendations<p>
-          <hr>
+          <p>Input your budget for Recommendations
+          <p>
+            <hr>
           <form action="#" onsubmit="return false">
-            <label for="lowest-price">Lowest price: </label><input type="number" id="lowest-price" value="0"></input>
-            <label for="highest-price">Highest price: </label><input type="number" id="highest-price" value="0"></input>
+            <label for="lowest-price">Lowest price: </label><input type="number" id="lowest-price"></input>
+            <label for="highest-price">Highest price: </label><input type="number" id="highest-price"></input>
             <label for="item-type">item type:</label>
             <select id="item-type">
               <option value="tablet">Tablet</option>
@@ -196,14 +200,14 @@
         <!--Parallax image-->
         <div class="parallax image-illume container--centered">
           <div class="box--center">
-            <h1 id="title">ARTISTS</h1>
+            <h1 class="title">ARTISTS</h1>
           </div>
         </div>
         <!--Intro-->
-        <div class="shadow background--black">
+        <div class="shadow background--black hidden">
           <hr>
           <h2><span>INTRODUCTION</span></h2>
-          <p>This page is about notable<span>Digital Artists</span> I personally follow,
+          <p>This page is about notable<span> Digital Artists</span> I personally follow,
             It contains a brief summary of their styles and profiles.
           </p>
           <hr>
@@ -211,84 +215,81 @@
       </section>
 
       <section class="box--center">
-        <div>
+        <div class="hidden">
           <hr>
-          <h2><span>Schools</span></h2>
-          <p>The are Some of the educational institutions I have studied at</p>
+          <h2><span>ARTISTS</span></h2>
+          <p>Here is a brief introduction to some notable artists and their different techniques and styles</p>
           <hr>
         </div>
-        <!--Primary School Info-->
+        <!--Yoneyama mai Info-->
         <div class="container">
           <!--Image and website-->
           <div class="shadow box--small box--center">
-            <h2>
-              <span>
-                Ngee Ann Primary School
-              </span>
-            </h2>
-            <img src="images/NgeeAnn_Primary_Logo.jpg" alt="Ngee Ann Primary Logo">
-            <a class="button" href="https://www.ngeeannpri.moe.edu.sg/" target="_blank"><span>Website</span></a>
-            <a class="button" href="tel:64418677" target="_blank"><span>Contact</span></a>
+            <img src="images/yoneyamamai.jpg" alt="Yoneyama">
           </div>
           <!--Details-->
-          <div class="shadow box--large  background--black">
-            <h2>PRIMARY SCHOOL</h2>
+          <div class="box-shadow box--large  background--black hidden">
+            <h2>Yoneyama Mai</h2>
             <hr>
-            <p>I studied in Ngee Ann Primary from 2013-2018. My time in primary school was mostly carefree
-              I was a bad student up until <span>PSLE</span>, horrendous actually
-              My math and chinese were especially bad. It wasn't until
-              Primary 6 when I started taking things Seriously. Somehow
-              Miraculously I was able to get my act together and Managed
-              to just barely scrape by into the Express stream</p>
+            <p>Yoneyama Mai is an renowned artist and animator, that utilises strong refined
+              and striking line art, color
+              and dynamic lighting to create illustrations that are characterised by the depiction
+              of strong feelings of the flow of <span>emotions and movements</span>,
+              which is the result of the fusion of a broad and deep sensibility that includes not only Japanese but also
+              Asian elements,
+              and an expressive ability to convey situations</p>
           </div>
         </div>
-        <!--Secondary School Info-->
+        <!--Matcha Info-->
         <div class="container">
           <!--Image and website-->
           <div class="box box--small shadow">
-            <h2>
-              <span>
-                Bedok South Secondary School
-              </span>
-            </h2>
-            <img src="images/bedok_south_secondary_school_logo.jpg" alt="BDS Logo">
-            <a class="button" href="https://www.bedoksouthsec.moe.edu.sg/" target="_blank"><span>Website</span></a>
-            <a class="button" href="tel:64414479" target="_blank"><span>Contact</span></a>
+            <img src="images/Matcha.jpg" alt="Matcha">
           </div>
           <!--Details-->
-          <div class="box-shadow box--large background--black">
-            <h2>SECONDARY SCHOOL</h2>
+          <div class="box-shadow box--large background--black hidden">
+            <h2>Matcha</h2>
             <hr>
-            <p>I studied in Bedok South Secondary from 2019-2022. I became quite unsociable during Secondary School,
-              and actually quite unlikeable I didn't talk to anybody
-              I didn't like, and my grades were quite bad throughout
-              Secondary 1, It got better in the later years though.
-              It was alright overall though.
+            <p>Matcha has what could be described as a very paintery style, her process involves painting over
+              a rough sketch with local colours before adding a rough lighting scenario and adding an overlay
+              layer this leads to very textured paintings,
+              with a soft glow and light atmosphere to them. Another artist with a similar style to hers would be
+              YEEJ-Chan
             </p>
           </div>
         </div>
-        <!--Polytechnic Info-->
+        <!--VOFAN Info-->
         <div class="container">
           <!--Image and website-->
           <div class="box box--small shadow">
-            <h2>
-              <span>
-                Nanyang Polytechnic
-              </span>
-            </h2>
-            <img src="images/nanyang_polytechnic_logo.jpg" alt="NYP Logo">
-            <a class="button" href="https://www.nyp.edu.sg/student" target="_blank"><span>Website</span></a>
-            <a class="button" href="https://www.nyp.edu.sg/contact-us/general-enquiries"
-              target="_blank"><span>Contact</span></a>
+            <img src="images/VOFAN.jpg" alt="VOFAN">
           </div>
           <!--Details-->
-          <div class="box-shadow box--large background--black">
-            <h2>TERTIARY EDUCATION</h2>
+          <div class="box-shadow box--large background--black hidden">
+            <h2>VOFAN</h2>
             <hr>
-            <p>Currently Studying at Nanyang Polytechnic's <span>Game Development and Technology</span> course,
-              when I first joined without any prior coding experience I felt like giving up at
-              in the first few weeks, and sometimes I still do. I hope I can survive until the end graduate
-              without any issues.
+            <p>VOFAN is a Taiwanese artist mostly known for his unique,
+              border-less art style that uses a lot of bright pastel colors and soft,
+              natural lighting. Some may know him as being the illustrator for the
+              Monogatari Series Novels
+
+            </p>
+          </div>
+        </div>
+
+        <div class="container">
+          <!--Image and website-->
+          <div class="box box--small shadow">
+            <img src="images/TohDaJun.png" alt="TohDaJun">
+          </div>
+          <!--Details-->
+          <div class="box-shadow box--large background--black hidden">
+            <h2>TOH DA JUN</h2>
+            <hr>
+            <p>Toh Da Jun is a Singaporean Artist who specializes in an extremely
+              abstract style of illustration, he has many notable works including "Blue sky" and "Grass".
+              He has been quoted saying:
+              "You can criticize me but not my <span>ART</span>".
             </p>
           </div>
         </div>
@@ -296,11 +297,10 @@
 
       <!--Section about Extracurriculars-->
       <section class="box--center">
-        <div>
+        <div class="hidden">
           <hr>
-          <h2><span>EXTRA-CURRICULARS</span></h2>
-          <p>This is section is dedicated towards my extracurricular activties that I have been in during my tenure as a
-            student</p>
+          <h2><span>GALLERY</span></h2>
+          <p>Click on the cards of the respective artists to find out more about their works</p>
           <hr>
         </div>
 
@@ -310,11 +310,16 @@
             <div class="card-container">
               <div class="card">
                 <div class="card-face card-face--front">
-                  <img src="https://pbs.twimg.com/profile_images/1155680462464942081/JBCvjutU_400x400.jpg"
-                    alt="yoneyama">
+                  <img src="images/yoneyamamai.jpg" alt="yoneyama">
                 </div>
                 <div class="card-face card-face--back">
-                  <p>I was INFOCOMM in Primary School</p>
+                  <h2><span>Yoneyama mai</span></h2>
+                  <hr>
+                  <p>Yoneyama Mai's Portfolio
+                  </p>
+                  <a class="button" target="_blank"
+                    href="https://x.com/yoneyamai?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                    <span>GALLERY</span></a>
                 </div>
               </div>
             </div>
@@ -324,12 +329,14 @@
             <div class="card-container">
               <div class="card">
                 <div class="card-face card-face--front">
-                  <h2><span>INFOCOMM</span></h2>
+                  <img src="images/Matcha.jpg" alt="matcha">
                 </div>
                 <div class="card-face card-face--back">
-                  <h2><span>INFOCOMM</span></h2>
+                  <h2><span>Matcha</span></h2>
                   <hr>
-                  <p>I was INFOCOMM in Primary School</p>
+                  <p>Matcha's Portfolio
+                  </p>
+                  <a class="button" target="_blank" href="https://x.com/matchach"><span>GALLERY</span></a>
                 </div>
               </div>
             </div>
@@ -339,12 +346,15 @@
             <div class="card-container">
               <div class="card">
                 <div class="card-face card-face--front">
-                  <h2><span>INFOCOMM</span></h2>
+                  <img src="images/VOFAN.jpg" alt="VOFAN">
                 </div>
                 <div class="card-face card-face--back">
-                  <h2><span>INFOCOMM</span></h2>
+                  <h2><span>VOFAN</span></h2>
                   <hr>
-                  <p>I was INFOCOMM in Primary School</p>
+                  <p>VOFAN's Portfolio
+                  </p>
+                  <a class="button" target="_blank" href="https://x.com/VOFAN_TW">
+                    <span>GALLERY</span></a>
                 </div>
               </div>
             </div>
@@ -358,102 +368,106 @@
         <!--Parallax image-->
         <div class="parallax image-dawn container--centered">
           <div class="box--center">
-            <h1 id="title">WORKFLOW</h1>
+            <h1 class="title">WORKFLOW</h1>
           </div>
         </div>
         <!--Intro-->
-        <div class="shadow background--black ">
+        <div class="shadow background--black hidden">
           <hr>
           <h2><span>INTRODUCTION</span></h2>
-          <p>Here is a section detailing some of my interests</p>
+          <p>Here is a section detailing the processes behind an illustration</p>
           <hr>
         </div>
       </section>
 
-      <!--Entertainment Section-->
+      <!--Ideation Section-->
       <section class="box--center">
         <div class="container">
           <div class="shadow box--start background--black">
-            <h2><span> Entertainment </span></h2>
+            <h2><span> IDEATION </span></h2>
           </div>
           <!--Middle Area-->
           <div class="container box--middle">
-            <div class="box--max shadow">
-              <h2><span>ANIME AND MANGA</span></h2>
+            <div class="box--max shadow hidden">
+              <h2><span>INSPIRATION</span></h2>
               <hr>
-              <p>I like <span>Anime and Manga</span>.
+              <p>Sketching things or taking note of interesting occurrences can help generate
+                <span>IDEAS</span> for illustrations.
               </p>
             </div>
 
-            <div class="box--max shadow">
-              <h2><span>MY FAVOURITES</span></h2>
+            <div class="box--max shadow hidden">
+              <h2><span>PLANNING</span></h2>
               <hr>
-              <p>I personally enjoyed<span> the manga </span>(NOT THE ANIME)
-                <span>of Tokyo Ghoul</span>. My favourite anime would either be <span>Death Parade</span>
-                or <span>the Monogatari Series</span> (Good series but a little too much fanservice).
+              <p>After getting inspiration, it is a good idea to plan out 
+                what to draw, what colors to use, positioning, camera angle and the general feel and tone of the illustration 
+                among other things
               </p>
             </div>
           </div>
 
-          <div class="shadow box--end">
-            <h2><span>MY ANIME LIST</span></h2>
+          <div class="shadow box--end hidden">
+            <h2><span>IMAGE WEBSITES</span></h2>
             <hr>
-            <p> This website is a database that stores various titles
+            <p> Websites like Pinterest or IMGUR are good places to find inspiration
             </p>
-            <a class="button" href="https://myanimelist.net/" target="_blank"><span> WEBSITE </span></a>
+            <a class="button" href="https://www.pinterest.com/" target="_blank"><span> PINTEREST </span></a>
+            <a class="button" href="https://imgur.com/" target="_blank"><span> IMGUR </span></a>
           </div>
         </div>
       </section>
 
-      <!--Games Section-->
+      <!--Drawing workflow Section-->
       <section class="box--center">
         <!--Container that wraps around the boxes inside to make a horizontal layout when on desktop-->
         <div class="container">
           <div class="box shadow background--black">
-            <h2><span> GAMES </span></h2>
+            <h2><span> Drawing </span></h2>
+            <p>This is the General Drawing Process.</p>
           </div>
-          <div class="box shadow ">
-            <h2><span>Turn-Based Games</span></h2>
+          <div class="box shadow hidden">
+            <h2><span>Sketch</span></h2>
             <hr>
-            <p>I like <span> the Turn-Based </span> Genre the most, especially RPGs.
+            <p>Start with a rough sketch of the drawing. Using light but clean strokes would be recommended to 
+              ensure visibility when doing lineart later on.
             </p>
+            <img src="images/Sketch.png" alt="Sketch Image">
           </div>
 
-          <div class="box shadow ">
-            <h2><span>MY FAVOURITES</span></h2>
+          <div class="box shadow hidden">
+            <h2><span>LINEART</span></h2>
             <hr>
-            <p>Too many to count but if I were to list some they would be </p>
-            <ol>
-              <li><a href="" class="button"><span>Persona Series</span></a></li>
-              <li><a href="" class="button"><span>The Cruel king and The Great Hero</span></a></li>
-              <li><a href="" class="button"><span>Library of Ruina</span></a></li>
-            </ol>
+            <p>Create another layer, lower the opacity of the sketch layer and draw over the sketch with
+              lines of varied thickness and weight. </p>
+            <img src="images/Lineart.png" alt="Lineart image">
           </div>
 
-          <div class="box shadow ">
-            <h2><span>STEAM</span></h2>
+          <div class="box shadow hidden">
+            <h2><span>COLOURING</span></h2>
             <hr>
-            <p> Here is my Steam Page
+            <p> Lastly color the drawing, make use of different shades and blend modes 
+              to create the illusion of lighting 
             </p>
-            <a class="button"><span> STEAM </span></a>
+            <img src="images/Coloured.png" alt="coloured image">
           </div>
         </div>
       </section>
 
       <section>
-        <div class="box--center shadow background--black">
+        <div class="box--center shadow background--black hidden">
           <h2><span>Try sketching!</span></h2>
         </div>
         <!--Drawing Canvas-->
         <canvas id="canvas" class="shadow">
-
         </canvas>
+        <audio id="drawingSound" src="audio/drawing.mp3"></audio>
         <!--Settings-->
         <div>
           <div class="box">
             <form action="#" onsubmit="return false">
               <label for="penColor">Color: </label><input type="color" id="penColor"></input>
-              <label for="penWidth">Pen Size: </label><input type="range" id="penWidth" min="0.1" max="1000" value="0.1"></input>
+              <label for="penWidth">Pen Size: </label><input type="range" id="penWidth" min="0.1" max="20"
+                value="0.1"></input>
               <button id="undo"> Undo</button>
               <button id="clear"> Clear</button>
               <button id="download-canvas"> Download Image</button>
@@ -505,12 +519,12 @@
         <li>
           <a class="footer-link" href="index.html">
             <span>
-              <i class="ri-home-fill"></i> Home
+               Home
             </span>
           </a>
         </li>
         <li>
-          <a class="footer-link" href="#title">
+          <a class="footer-link" href="#top">
             <span>
               Back To Top
             </span>

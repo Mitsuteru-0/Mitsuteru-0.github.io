@@ -70,20 +70,20 @@ for (let onecard of allcards) {
 /*Scroll Animations */
 const blockReveals = document.querySelectorAll('.hidden');
 
-const observer = new IntersectionObserver(function(entries) {
-	entries.forEach(function(entry) {
-		//Reveal the things that are hidden
-		if (entry.isIntersecting) {
-			entry.target.classList.add('reveal');
-		}
-		//Hide the things that are supposed to be hidden when not in view
-		else {
-			entry.target.classList.remove('reveal');
-		}
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        //Reveal the things that are hidden
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+        }
+        //Hide the things that are supposed to be hidden when not in view
+        else {
+            entry.target.classList.remove('reveal');
+        }
 
-	});
+    });
 }, {
-	threshold: [0.5, 0]
+    threshold: [0.5, 0]
 });
 //
 for (let i = 0; i < blockReveals.length; i++) {
@@ -355,8 +355,8 @@ products.push(new Product("images/HuionKamvas16Pro.jpg",
 products.push(new Product("images/WacomIntuos.jpg",
     "Intuos Pro", 550, "tablet", "High Quality No-Screen tablet made by Wacom"));
 products.push(new Product("images/IntuosS.jpg",
-        "Intuos Small", 100, "tablet", "No-Screen tablet made by Wacom"));
-products.push(new Product("images/PaperLike.jpg",
+    "Intuos Small", 100, "tablet", "No-Screen tablet made by Wacom"));
+products.push(new Product("images/Paperlike.jpg",
     "PaperLike", 50, "accessory", "Matte Screen Protector"));
 products.push(new Product("images/DrawingGlove.jpg",
     "Drawing Glove", 20, "accessory", "A glove to prevent smudges on an LCD tablet"));

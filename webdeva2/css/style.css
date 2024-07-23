@@ -250,6 +250,7 @@ footer {
   color: white;
   background-color: rgb(48, 48, 48);
   display: flex;
+  flex-wrap: wrap;
   height: 100%;
   flex-direction: column;
   margin-top: auto;
@@ -466,7 +467,7 @@ div.container--centered {
   padding-bottom: 0.25em;
 }
 
-.box--footer {
+footer>.box {
   background-color: rgb(58, 58, 58);
   color: white;
   text-align: center;
@@ -474,6 +475,10 @@ div.container--centered {
   flex-grow: 1;
   margin: 0.1em;
   padding: 1em;
+}
+/*QR code hide for mobile*/
+footer>.box:last-of-type {
+  display: none;
 }
 
 nav {
@@ -617,6 +622,8 @@ canvas {
 }
 
 
+
+
 /*hide the menu item list*/
 
 /*desktop*/
@@ -658,8 +665,8 @@ canvas {
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr); 
-    grid-gap:1em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
   }
 
   /* Make the first child occupy half the grid */
@@ -758,6 +765,12 @@ canvas {
     background-size: 400%;
 
     animation: changeGradient 2s forwards;
+  }
+
+  /*unhide qr code for desktop*/
+  footer>.box:last-of-type {
+    display: block;
+    flex-basis: 100%;
   }
 
 }
